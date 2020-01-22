@@ -17,7 +17,7 @@ node {
    stage('Checkout') {
       checkout scm
 
-      def props = readProperties file: '${workspace}/queue.properties'
+      def props = readProperties file: 'queue.properties'
       artifactVersion = props.version
 
       REPOSITORY_TAG="${env.DOCKERHUB_USERNAME}/${env.ORGANIZATION_NAME}-${name}:${artifactVersion}.${env.BUILD_ID}"
